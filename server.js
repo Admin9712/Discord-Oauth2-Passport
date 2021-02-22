@@ -78,7 +78,7 @@ app.get('/perfil', checkAuth, function(req, res) {
 
 function checkAuth(req, res, next) {
     if (req.isAuthenticated()) return next();
-        res.send('not logged in...try again.');
+        res.send(`No estas Logeado Vuelve a abrir ${process.env.DOMINIO}.`);  // AQUI PUEDES PONER res.redirect('/login'); para que envez que te diga que no estas Loggeado te redirija a Logearte
 }
 
 
