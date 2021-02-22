@@ -1,4 +1,4 @@
 ------------
-REPOSITORY BASED ON: https://github.com/cloud9team/discord-oauth-passport
+Discord oauth2 passport, basado en el Repositorio https://github.com/cloud9team/discord-oauth-passport
 
 ------------
