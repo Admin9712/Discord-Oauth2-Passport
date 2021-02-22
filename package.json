@@ -1,0 +1,24 @@
+{
+  "name": "Discord-Oauth2-Passport",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "cloud9team (https://github.com/cloud9team) and Whoisadri2 (https://github.com/Whoisadri2)",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.0",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "figlet": "^1.5.0",
+    "passport": "^0.3.2",
+    "passport-oauth2": "^1.2.0",
+    "passport-oauth2-refresh": "^1.1.0",
+    "request": "^2.88.2",
+    "request-hostname": "^1.0.0"
+  }
+}
