@@ -1,14 +1,7 @@
-<!DOCTYPE html>
 <html>
 <head>
 <style>
 body {background-color: powderblue;}
-h1 {
-  color: green;
-  font-family: verdana;
-  font-size: 150%;
-
-}
 p  {
   color: red;
   font-family: courier;
@@ -19,11 +12,21 @@ h5 {
   padding: 5px;
 	width: 865px;
 }
+h3 {
+  border: 2px solid red;
+  padding: 5px;
+	width: 865px;
+  color: green;
+}
 </style>
 </head>
 <body>
 <center>
 <h5><p>ERROR</p></h5>
+<h3>No estas Loggeado necesitas Loggearte para ir a tu Perfil.</h3>
+<h3>Logeate <a href="/login">Aqui</a>.</h3>
+<%- include('./separadores/separador1') %>
+<%- include('./bloques/footer') %>
 </center>
 
 
