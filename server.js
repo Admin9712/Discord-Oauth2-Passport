@@ -43,7 +43,14 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.set('views',__dirname+'/views');
 app.get('/', function(req, res) {
+   
     res.render(`./index.ejs`);
+});
+app.get('/error', function(req, res) {
+    res.render(`./error.ejs`);
+});
+app.get('/discord', function(req, res) {
+   res.redirect(process.env.LINK_SERVIDOR_DISCORD);
 });
 app.get('/login', passport.authenticate('discord', { scope: scopes }), function(req, res) {});
 app.get('/callback',
@@ -53,6 +60,7 @@ app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
 });
+
 app.get('/perfil', checkAuth, function(req, res) {
     var i, x = "";
     var d = req.user;
@@ -70,7 +78,8 @@ app.get('/perfil', checkAuth, function(req, res) {
         req.session.name = uname;
         req.session.email = email;
         req.session.uid = uid;
-        res.render(`./template.ejs`,{uname:req.session.name}); 
+        res.render(`./perfil.ejs`,{uname:req.session.name}); 
+        console.log(`Se ha Loggeado ${uname}`)
     } else {
         res.redirect(process.env.LINK_SERVIDOR_DISCORD);
     }
@@ -78,7 +87,7 @@ app.get('/perfil', checkAuth, function(req, res) {
 
 function checkAuth(req, res, next) {
     if (req.isAuthenticated()) return next();
-        res.send(`No estas Logeado Vuelve a abrir ${process.env.DOMINIO}.`);  // AQUI PUEDES PONER res.redirect('/login'); para que envez que te diga que no estas Loggeado te redirija a Logearte
+            res.redirect('/error');  // AQUI PUEDES PONER res.redirect('/login'); para que envez que te redirija a /error te redirija a Logearte
 }
 
 
