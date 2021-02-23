@@ -7,4 +7,5 @@ cd Discord-Oauth2-Passport
 npm i
 abres el archivo .env colocas lo necesario
 npm start
+
 ------------
