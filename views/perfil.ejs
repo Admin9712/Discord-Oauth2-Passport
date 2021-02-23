@@ -28,8 +28,39 @@ h3 {
 <body>
 <center>
 <h5><p>TU PERFIL</p></h5>
-<h3>Email: <%= email %><hr>Nombre de Usuario en Discord: <%= uname %><hr>ID De Usuario en Discord: <%= uid %><hr>Link de tu Avatar en Discord: <a href="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>">Aqui</a><hr><img class="" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"></h3>
+<h3>Email: <%= email %><hr>Nombre de Usuario en Discord: <%= uname %><hr>ID De Usuario en Discord: <%= uid %><hr>Link de tu Avatar en Discord: <a href="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>">Aqui</a><hr><img class="" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"><hr>Servidores</h3>
+    <% d.guilds.forEach(guild => { %>
+        <% if (guild.icon) { %>
+          <img class="" src="<%= `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128` %>" style="width: 80px;" alt="">
+          <% } else { %>
+            <canvas style="background-color: #7289da" class="" id="<%= guild.name.split(' ').join('').replace(`'`, ``) %>" width="80px" height="80px"></canvas>
+            <script>
+              function draw() {
+                const ctx = document.getElementById("<%= guild.name.split(' ').join('').replace(`'`, ``) %>").getContext('2d');
+                ctx.font = '30px Arial';
+                ctx.textAlign = "center";
+                ctx.fillStyle = "white";
+                ctx.fillText("<%= guild.name.split(' ').map(v => v[0]).join('') %>", 40, 50);
+              };
+              draw();
+            </script>
+            <% } %>
+              <div class="">
+                <h3 class="">
+                  <%= guild.name %>
+	          <hr>
+		  <a style="color:DarkRed;">ID Server:</a>
+		  <a style="color:DarkPurple;"><%= guild.id %></a>
+                  <hr>
+                </h5>
+
+                
+       
+              </div>
+      </li>
+      <% }); %>
+  </ul>
 <%- include('./bloques/footers/footerper') %>
 </center>
 </body>
-</html>
+</html>  
