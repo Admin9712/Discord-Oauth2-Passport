@@ -40,9 +40,5 @@ h4 {
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h4><a href="/login">Login</a> | <a href="/discord">Server Discord</a> | <a href="https://github.com/Whoisadri2/Discord-Oauth2-Passport">GitHub</a></h4>
+<% if (user) { %>
+<h4><p><%= d.username %>#<%= d.discriminator %></p> <% } %><a href="/perfil">Perfil</a> | <a href="/discord">Server Discord</a> | <a href="https://github.com/Whoisadri2/Discord-Oauth2-Passport">GitHub</a></h4>
