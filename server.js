@@ -82,7 +82,8 @@ app.get('/perfil', checkAuth, function(req, res) {
         req.session.email = email;
         req.session.uid = uid;
         req.session.avatar = avatar;
-        res.render(`./perfil.ejs`,{uname:req.session.name, uid:req.session.uid, email:req.session.email, avatar:req.session.avatar}); 
+        req.session.user = d;
+        res.render(`./perfil.ejs`,{d:req.session.user, uname:req.session.name, uid:req.session.uid, email:req.session.email, avatar:req.session.avatar}); 
     } else {
         res.redirect(process.env.LINK_SERVIDOR_DISCORD);
     }
