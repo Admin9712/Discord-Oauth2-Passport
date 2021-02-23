@@ -52,6 +52,9 @@ app.get('/login', passport.authenticate('discord', { scope: scopes }), function(
 app.get('/callback',
     passport.authenticate('discord', { failureRedirect: '/fail' }), function(req, res) { res.redirect('/perfil') } 
 );
+app.get('/discord', function(req, res) {
+    res.redirect(process.env.LINK_SERVIDOR_DISCORD);
+});
 app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
@@ -64,6 +67,7 @@ app.get('/perfil', checkAuth, function(req, res) {
     var uname = (d.username + "#" + d.discriminator);
     var uid = d.id;
     var email = d.email;
+    var avatar = d.avatar;
     for (i in guild) {
         if (guild[i].id == myguild) {
             x = d.guilds[i].id;
@@ -73,7 +77,8 @@ app.get('/perfil', checkAuth, function(req, res) {
         req.session.name = uname;
         req.session.email = email;
         req.session.uid = uid;
-        res.render(`./perfil.ejs`,{uname:req.session.name}); 
+        req.session.avatar = avatar;
+        res.render(`./perfil.ejs`,{uname:req.session.name, uid:req.session.uid, email:req.session.email, avatar:req.session.avatar}); 
         console.log(`Se ha Loggeado ${uname}`)
     } else {
         res.redirect(process.env.LINK_SERVIDOR_DISCORD);
