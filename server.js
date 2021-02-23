@@ -42,15 +42,19 @@ app.use(passport.session());
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.set('views',__dirname+'/views');
-app.get('/', function(req, res) {
-    res.render(`./index.ejs`,{user:req, res});
+app.get('/', checkAuth, function(req, res) {
+  var i, x = "";
+    var d = req.user;
+   req.session.name = d;
+    res.render(`./index.ejs`,{user:req, res, d:req.session.name});
 });
+
 app.get('/error', function(req, res) {
     res.render(`./error.ejs`);
 });
 app.get('/login', passport.authenticate('discord', { scope: scopes }), function(req, res) {});
 app.get('/callback',
-    passport.authenticate('discord', { failureRedirect: '/fail' }), function(req, res) { res.redirect('/perfil') } 
+    passport.authenticate('discord', { failureRedirect: '/fail' }), function(req, res) { res.redirect('/') } 
 );
 app.get('/discord', function(req, res) {
     res.redirect(process.env.LINK_SERVIDOR_DISCORD);
@@ -79,7 +83,6 @@ app.get('/perfil', checkAuth, function(req, res) {
         req.session.uid = uid;
         req.session.avatar = avatar;
         res.render(`./perfil.ejs`,{uname:req.session.name, uid:req.session.uid, email:req.session.email, avatar:req.session.avatar}); 
-        console.log(`Se ha Loggeado ${uname}`)
     } else {
         res.redirect(process.env.LINK_SERVIDOR_DISCORD);
     }
@@ -87,7 +90,7 @@ app.get('/perfil', checkAuth, function(req, res) {
 
 function checkAuth(req, res, next) {
     if (req.isAuthenticated()) return next();
-            res.redirect('/error');  // AQUI PUEDES PONER res.redirect('/login'); para que envez que te redirija a /error te redirija a Logearte
+            res.redirect('/login');  
 }
 
 
