@@ -43,14 +43,10 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.set('views',__dirname+'/views');
 app.get('/', function(req, res) {
-   
-    res.render(`./index.ejs`);
+    res.render(`./index.ejs`,{user:req, res});
 });
 app.get('/error', function(req, res) {
     res.render(`./error.ejs`);
-});
-app.get('/discord', function(req, res) {
-   res.redirect(process.env.LINK_SERVIDOR_DISCORD);
 });
 app.get('/login', passport.authenticate('discord', { scope: scopes }), function(req, res) {});
 app.get('/callback',
@@ -60,7 +56,6 @@ app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
 });
-
 app.get('/perfil', checkAuth, function(req, res) {
     var i, x = "";
     var d = req.user;
