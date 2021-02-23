@@ -18,19 +18,22 @@ h5 {
   padding: 5px;
 	width: 865px;
 }
-
+h3 {
+  border: 2px solid silver;
+  padding: 5px;
+	width: 865px;
+}
 </style>
 </head>
 <body>
 <center>
 <h5><p>TU PERFIL</p></h5>
 
-</center>
-  <tr><td>Discord Username: <%= uname %></td></tr>
-<center>
+
+
+<h3>Email: <%= email %><hr>Nombre de Usuario en Discord: <%= uname %><hr>ID De Usuario en Discord: <%= uid %><hr>Link de tu Avatar en Discord: <a href="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>">Aqui</a><hr><img class="" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"></h3>
+
 <%- include('./bloques/footers/footerper') %>
 </center>
 </body>
 </html>
-
-              
