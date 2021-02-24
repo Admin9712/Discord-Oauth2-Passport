@@ -2,7 +2,7 @@
 # IMAGENES
 <img src="https://media.discordapp.net/attachments/684760543026085894/813829790258823248/14550aaa8149ec3eefde19d9a3f006f6.png?width=1389&height=676">
 
-<img src="https://media.discordapp.net/attachments/684760543026085894/813987204454940672/f69a3f0192d4c96921f87b3093dc12aa.png?width=1383&height=676">
+<img src="https://media.discordapp.net/attachments/684760543026085894/813987204454940672/f69a3f0192d4c96921f87b3093dc12aa.png?width=1383&height=67">
 
 ------------
 # INFO
