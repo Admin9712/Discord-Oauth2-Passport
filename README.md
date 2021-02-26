@@ -1,6 +1,6 @@
 ------------
 # IMAGENES
-<img src="https://media.discordapp.net/attachments/684760543026085894/813829790258823248/14550aaa8149ec3eefde19d9a3f006f6.png?width=1389&height=676">
+<img src="https://media.discordapp.net/attachments/684760543026085894/814660269652443146/d13898693e2e41d7d548420c9f12934f.png?width=1387&height=676">
 
 <img src="https://media.discordapp.net/attachments/684760543026085894/813987653199462430/35c158551e39ace05a2abc55343f945a.png?width=1385&height=676">
 
