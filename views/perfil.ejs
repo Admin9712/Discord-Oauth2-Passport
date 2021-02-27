@@ -1,13 +1,78 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<%- include('./bloques/headers/headerper') %>
-<style>
-body {background-color: powderblue;}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Perfil | <%= uname %></title>
 </head>
 <body>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500');
+
+body {
+    background: #2C2F33;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.page-content {
+    padding: 4px 42px;
+}
+
+.page-content h1 { margin-bottom: -10px; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+p, a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.navbar {
+    background: #23272A;
+    padding: 21px 42px;
+}
+
+.navbar a {
+    transition: .25s ease;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #7792f3;
+}
+
+.navbar a:not(:last-child) {
+    margin-right: 12px;
+}
+
+.navbar .right {
+    float: right;
+}
+</style>
+    <div class="navbar">
+    <a href="/"></a>
+
+    <div class="right">
+            <a href="/perfil"><%- d.username %></a>
+            <a href="/">Inicio</a>
+            <a href="/discord">Discord</a>
+            <a href="https://github.com/Admin9712/Discord-Oauth2-Passport">GitHub</a>
+    </div>
+</div>
+
+    <div class="page-content">
+        <h1>Bienvenido</h1>
+        <p>Este es tu Perfil.</p>
 <center>
-<h3>Email: <%= email %><hr>Nombre de Usuario en Discord: <%= uname %><hr>ID De Usuario en Discord: <%= uid %><hr>Link de tu Avatar en Discord: <a href="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>">Aqui</a><hr><img class="" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"><hr>Servidores</h3>
+<h3>Email: <%= email %><hr>Nombre de Usuario en Discord: <%= uname %><hr>ID De Usuario en Discord: <%= uid %><hr>Link de tu Avatar en Discord: <a href="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>">Aqui</a><hr><img class="" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"><hr>Servidores<br><hr></h3>
     <% d.guilds.forEach(guild => { %>
             <script>
               function draw() {
@@ -24,18 +89,16 @@ body {background-color: powderblue;}
         					<% if (guild.icon) { %> <img class="" src="<%= `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128` %>" style="width: 80px;" alt=""> <% } else { %> <canvas style="background-color: #7289da" class="" id="<%= guild.name.split(' ').join('').replace(`'`, ``) %>" width="80px" height="80px"></canvas> <% } %>
 							    <br>
                   <%= guild.name %>
-	          			<hr>
-		  						<a style="color:DarkRed;">ID Server:</a>
-		  						<a style="color:DarkPurple;"><%= guild.id %></a>
+	          			<br>
+									<br>
+		  						<a style="color:Yellow;">ID Server</a><a style="color:DarkPurple;">: <%= guild.id %></a>
+									<hr>
                 </h5>
-
-                
-       
-              </div>
+            </div>
       </li>
       <% }); %>
   </ul>
 </center>
-<%- include('./bloques/footers/footerper') %>
+    </div>
 </body>
 </html>
