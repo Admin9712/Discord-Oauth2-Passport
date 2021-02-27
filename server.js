@@ -46,9 +46,8 @@ app.get('/', checkAuth, function(req, res) {
   var i, x = "";
     var d = req.user;
    req.session.name = d;
-    res.render(`./index.ejs`,{user:req, res, d:req.session.name});
+    res.render(`./index.ejs`,{d:req.session.name});
 });
-
 app.get('/error', function(req, res) {
     res.render(`./error.ejs`);
 });
