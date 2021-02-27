@@ -1,8 +1,8 @@
 ------------
 # IMAGENES
-<img src="https://media.discordapp.net/attachments/684760543026085894/815251326199005224/2ed6a6bbd212ce2e5056821ee2b9edab.png?width=1385&height=676">
+<img src="https://media.discordapp.net/attachments/684760543026085894/815363663351119902/4c3155bf08e3d88135e7dfc75c3fc3a0.png?width=1389&height=676">
 
-<img src="https://media.discordapp.net/attachments/684760543026085894/815251346969198612/13bf57249bea17aa29b85c3f90081034.png?width=1387&height=676">
+<img src="https://media.discordapp.net/attachments/684760543026085894/815363682744926238/68ef154c0a3983e41249e3b130a3ae4f.png?width=1383&height=676">
 
 ------------
 # INFO
