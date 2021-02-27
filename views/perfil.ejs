@@ -1,33 +1,12 @@
 <html>
 <head>
+<%- include('./bloques/headers/headerper') %>
 <style>
 body {background-color: powderblue;}
-h1 {
-  color: green;
-  font-family: verdana;
-  font-size: 150%;
-
-}
-p  {
-  color: green;
-  font-family: courier;
-  font-size: 190%;
-}
-h5 {
-  border: 2px solid green;
-  padding: 5px;
-	width: 865px;
-}
-h3 {
-  border: 2px solid silver;
-  padding: 5px;
-	width: 865px;
-}
 </style>
 </head>
 <body>
 <center>
-<h5><p>TU PERFIL</p></h5>
 <h3>Email: <%= email %><hr>Nombre de Usuario en Discord: <%= uname %><hr>ID De Usuario en Discord: <%= uid %><hr>Link de tu Avatar en Discord: <a href="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>">Aqui</a><hr><img class="" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"><hr>Servidores</h3>
     <% d.guilds.forEach(guild => { %>
             <script>
@@ -56,7 +35,7 @@ h3 {
       </li>
       <% }); %>
   </ul>
-<%- include('./bloques/footers/footerper') %>
 </center>
+<%- include('./bloques/footers/footerper') %>
 </body>
-</html>     
+</html>
