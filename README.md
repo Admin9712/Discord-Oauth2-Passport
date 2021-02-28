@@ -1,3 +1,5 @@
+[![Discord-Oauth2-Passport](https://github-readme-stats.vercel.app/api/pin/?username=Admin9712&repo=Discord-Oauth2-Passport&theme=dark)](https://github.com/Admin9712/Discord-Oauth2-Passport)<br/>
+
 ------------
 # IMAGENES
 <img src="https://media.discordapp.net/attachments/684760543026085894/815464590380498994/e06a4507c2765ff47574963fc67d07d0.png?width=1387&height=676">
