@@ -1,10 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Perfil | <%= uname %></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
 </head>
 <body>
 <style>
@@ -58,9 +59,10 @@ p, a {
 }
 </style>
     <div class="navbar">
-    <a href="/"></a>
+    <a href="/perfil"><img src="https://media.discordapp.net/attachments/684760543026085894/815403925238448128/logooe.png"></a>
 
     <div class="right">
+		<a href="/perfil"><img class="d-inline-block align-middle 	rounded-circle" width="34" height="34" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"></a>
             <a href="/perfil"><%- d.username %></a>
             <a href="/">Inicio</a>
             <a href="/discord">Discord</a>
