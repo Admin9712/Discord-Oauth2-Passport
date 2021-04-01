@@ -73,9 +73,9 @@ p, a {
     <div class="page-content">
         <h1>Bienvenido</h1>
         <p>Este es tu Perfil.</p>
-<center>
-<h3>Email: <%= email %><hr>Nombre de Usuario en Discord: <%= uname %><hr>ID De Usuario en Discord: <%= uid %><hr>Link de tu Avatar en Discord: <a href="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>">Aqui</a><hr><img class="" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"><hr>Servidores<br><hr></h3>
-    <% d.guilds.forEach(guild => { %>
+	<center>
+	<h3>Email: <%= email %><hr>Nombre de Usuario en Discord: <%= uname %><hr>ID De Usuario en Discord: <%= uid %><hr>Link de tu Avatar en Discord: <a href="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>">Aqui</a><hr><img class="" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"><hr>Servidores<br><hr></h3>
+    	<% d.guilds.forEach(guild => { %>
             <script>
               function draw() {
                 const ctx = document.getElementById("<%= guild.name.split(' ').join('').replace(`'`, ``) %>").getContext('2d');
@@ -88,13 +88,13 @@ p, a {
             </script>
               <div class="">
                 <h3 class="">
-        					<% if (guild.icon) { %> <img class="" src="<%= `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128` %>" style="width: 80px;" alt=""> <% } else { %> <canvas style="background-color: #7289da" class="" id="<%= guild.name.split(' ').join('').replace(`'`, ``) %>" width="80px" height="80px"></canvas> <% } %>
-							    <br>
-                  <%= guild.name %>
-	          			<br>
-									<br>
-		  						<a style="color:Yellow;">ID Server</a><a style="color:DarkPurple;">: <%= guild.id %></a>
-									<hr>
+        		<% if (guild.icon) { %> <img class="" src="<%= `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128` %>" style="width: 80px;" alt=""> <% } else { %> <canvas style="background-color: #7289da" class="" id="<%= guild.name.split(' ').join('').replace(`'`, ``) %>" width="80px" height="80px"></canvas> <% } %>
+			<br>
+                  	<%= guild.name %>
+	          	<br>
+			<br>
+		  	<a style="color:Yellow;">ID Server</a><a style="color:DarkPurple;">: <%= guild.id %></a>
+			<hr>
                 </h5>
             </div>
       </li>
