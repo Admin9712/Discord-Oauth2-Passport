@@ -66,27 +66,18 @@ app.get('/perfil', checkAuth, function(req, res) {
     var i, x = "";
     var d = req.user;
     var guild = d.guilds;
-    var myguild = process.env.ID_SERVIDOR_DISCORD;
     var uname = (d.username + "#" + d.discriminator);
     var uid = d.id;
     var email = d.email;
     var avatar = d.avatar;
-    for (i in guild) {
-        if (guild[i].id == myguild) {
-            x = d.guilds[i].id;
-        }
-    }
-    if (x == myguild) { 
+
         req.session.name = uname;
         req.session.email = email;
         req.session.uid = uid;
         req.session.avatar = avatar;
         req.session.user = d;
         res.render(`./perfil.ejs`,{d:req.session.user, uname:req.session.name, uid:req.session.uid, email:req.session.email, avatar:req.session.avatar}); 
-    } else {
-        res.redirect(process.env.LINK_SERVIDOR_DISCORD);
-    }
-});
+})
 
 function checkAuth(req, res, next) {
     if (req.isAuthenticated()) return next();
