@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Perfil | <%= uname %></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+</head>
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500');
+
+body {
+    background: #2C2F33;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.page-content {
+    padding: 4px 42px;
+}
+
+.page-content h1 { margin-bottom: -10px; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+p, a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.navbar {
+    background: #23272A;
+    padding: 21px 42px;
+}
+
+.navbar a {
+    transition: .25s ease;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #7792f3;
+}
+
+.navbar a:not(:last-child) {
+    margin-right: 12px;
+}
+
+.navbar .right {
+    float: right;
+}
+.navbar3 {
+    background: #23272A;
+    padding: 30px 42px;
+}
+</style>
+    <div class="navbar">
+    <a href="/perfil"><img src="https://media.discordapp.net/attachments/684760543026085894/815403925238448128/logooe.png"></a>
+
+    <div class="right">
+		<a href="/perfil"><img class="d-inline-block align-middle 	rounded-circle" width="34" height="34" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"></a>
+            <a href="/perfil"><%- d.username %></a>
+            <a href="/">Inicio</a>
+            <a href="/discord">Discord</a>
+            <a href="https://github.com/Admin9712/Discord-Oauth2-Passport">GitHub</a>
+    </div>
+</div>
+
+    <div class="page-content">
+        <h1>Bienvenido</h1>
+        <p>Este es tu Perfil.</p>
+	<center>
+	<h3>Email: <%= email %><hr>Nombre de Usuario en Discord: <%= uname %><hr>ID De Usuario en Discord: <%= uid %><hr>Link de tu Avatar en Discord: <a href="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>">Aqui</a><hr><img class="" src="https://cdn.discordapp.com/avatars/<%= uid %>/<%= avatar %>"><hr>Servidores<br><hr></h3>
+    	<% d.guilds.forEach(guild => { %>
+            <script>
+              function draw() {
+                const ctx = document.getElementById("<%= guild.name.split(' ').join('').replace(`'`, ``) %>").getContext('2d');
+                ctx.font = '30px Arial';
+                ctx.textAlign = "center";
+                ctx.fillStyle = "white";
+                ctx.fillText("<%= guild.name.split(' ').map(v => v[0]).join('') %>", 40, 50);
+              };
+              draw();
+            </script>
+              <div class="">
+                <h3 class="">
+        		<% if (guild.icon) { %> <img class="" src="<%= `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128` %>" style="width: 80px;" alt=""> <% } else { %> <canvas style="background-color: #7289da" class="" id="<%= guild.name.split(' ').join('').replace(`'`, ``) %>" width="80px" height="80px"></canvas> <% } %>
+			<br>
+                  	<%= guild.name %>
+	          	<br>
+			<br>
+		  	<a style="color:Yellow;">ID Server</a><a style="color:DarkPurple;">: <%= guild.id %></a>
+			<hr>
+                </h5>
+            </div>
+      </li>
+      <% }); %>
+  </ul>
+</center>
+    </div>
+</body>
+<center>
+<div class="navbar3">
+    <div class="right">
+            <a href="">Discord Oauth2 Passport © 2021</a>
+<br>
+		<a href="/discord"><img class="" width="34" height="34" src="https://media.discordapp.net/attachments/684760543026085894/834995893631451146/discord-logo-png-7617.png"></a>
+		<a href="/twitter"><img class="" width="38" height="38" src="https://media.discordapp.net/attachments/684760543026085894/834996233122086932/twitter-logo-png-5859.png"></a>
+		<a href="/youtube"><img class="" width="38" height="38" src="https://media.discordapp.net/attachments/684760543026085894/834998152288927786/youtube-logo-png-2075.png"></a>
+
+</center>
+</div>
+
+</html>
